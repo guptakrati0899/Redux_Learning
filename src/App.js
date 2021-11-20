@@ -1,17 +1,21 @@
 import React from 'react';
 import './App.css';
+import Display from './GlobalStateDemo/Display';
+import Increment from './GlobalStateDemo/Increment';
+import { store } from './redux/store';
+import { Provider } from 'react-redux';
 
-const LocalCounter=(props) =>{
+const App=(props) =>{
 
-  const[ buttonValue,setButtonValue] = React.useState(-10);
+  // const[ buttonValue,setButtonValue] = React.useState(-10);
 
   return (
+    <Provider store ={store}>
     <div>
-      the button value is {buttonValue}
-      <button onClick={() =>{
-        setButtonValue(buttonValue+1)
-      }}>Hello World</button>
+      <Display/>
+      <Increment/>
     </div>
+    </Provider>
   )
     
   
@@ -19,4 +23,4 @@ const LocalCounter=(props) =>{
 
 }
 
-export default LocalCounter;
+export default App;
