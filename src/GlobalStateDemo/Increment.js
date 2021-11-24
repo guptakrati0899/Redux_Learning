@@ -1,5 +1,5 @@
 import React from 'react'
-import { incrementCount } from '../redux/action';
+import { getTitle, incrementCount } from '../redux/action';
 import { useDispatch } from 'react-redux';
 
 const Increment=() =>{
@@ -7,7 +7,7 @@ const Increment=() =>{
 
     const increment = ()=>{
         
-        dispatch(incrementCount())
+        dispatch(getTitle())
     }
 
     return(

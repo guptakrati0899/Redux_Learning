@@ -1,12 +1,19 @@
-import INCREMENT_COUNT from "./action"
+import INCREMENT_COUNT, { SAVE_USER } from "./action"
 
-const initial=0;
+const initial ={
+    user:'0'
+}
 
-const incrementReducer = (state=initial,action)=>{
+const incrementReducer = (state=initial,action={})=>{
     if(action.type === INCREMENT_COUNT ){
 
-        return state+2;
+        return state;
 
+    }
+    else if (action.type ===SAVE_USER){
+        return {
+            ...action.payload
+        }
     }
     else return state;
 
